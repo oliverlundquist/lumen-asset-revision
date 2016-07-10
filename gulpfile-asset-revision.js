@@ -32,18 +32,17 @@ gulp.task('upload', ['revision'], function () {
 });
 
 gulp.task('watch', function () {
-    //gulp.watch(['src/**/*.css'], ['revision', 'upload']);
     gulp.watch(['resources/styles/**/*.css'], ['upload']);
 });
 
 /////////
 
 function awsconfig() {
-	return {
-		"key": process.env.AWS_KEY,
-		"secret": process.env.AWS_SECRET,
-		"bucket": "oliver-uploads"
-	}
+    return {
+        "key": process.env.AWS_KEY,
+        "secret": process.env.AWS_SECRET,
+        "bucket": "oliver-uploads"
+    }
 }
 
 function deleteEmptyFolders() {
